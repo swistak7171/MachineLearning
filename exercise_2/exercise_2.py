@@ -9,7 +9,7 @@ def separate(number):
     print(f'=========== {number} ===========')
 
 
-def fullPrint(frame):
+def full_print(frame):
     with pd.option_context('display.max_rows', None, "display.max_columns", None):
         print(frame)
 
@@ -21,13 +21,13 @@ print(frame)
 
 # Wyświetla tabelę z samochodami marki Nissan, które zostały wyprodukowane przez 2015 rokiem
 separate(2)
-fullPrint(frame.query(
+full_print(frame.query(
     'marka == "Nissan" and rok_produkcji < 2015'
 ))
 
 # Zmienia nazwę kolumn na bardziej przystępne
 separate(3)
-fullPrint(frame.rename(columns={
+full_print(frame.rename(columns={
     'id': 'ID',
     'marka': 'Marka',
     'model': 'Model',
@@ -49,7 +49,7 @@ print(frame[['marka', 'model', 'cena']])
 
 # Wyświetla statystyki danych (liczbę rekordów, ich unikalność, średnią itp.)
 separate(6)
-fullPrint(frame.describe(include='all'))
+full_print(frame.describe(include='all'))
 
 # Wyświetla liczbę wierszy, medianę każdej kolumny, sumę wartości,
 # wartość najmniejszą i największą w każdej kolumnie

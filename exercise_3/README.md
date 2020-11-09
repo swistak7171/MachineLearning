@@ -75,3 +75,24 @@ _sns.pointplot(x, y, hue, data)_ - tworzy wykres punktowy dla danych
 _sns.violinplot(x, y, hue, data)_ - tworzy wykres skrzypcowy dla danych
 
 _sns.boxplot(x, y, hue, data)_ - tworzy wykres pudełkowy dla danych
+
+## Bokeh
+
+
+_figure(title, x_label, y_label)_ - tworzy nowy wykres o tytule i etykietach
+
+_figure.line(x, y)_ - tworzy wykres liniowy z danymi
+
+_output_file(filename)_ - zapisuje utworzony wcześniej wykres do pliku o nazwie
+
+_show(figure)_ - wyświetla wykres w przeglądarce
+
+_figure.legend.orientation_ - pozwala ustawić orientację legendy wykresu
+
+_figure.legend.border_line_color_ - pozwala ustawić kolor linii brzegowej legendy wykresu
+
+_figure.legend_background_fill_color_ - pozwala ustawić kolor wypełnienia legendy wykresu
+
+_figure.circle(x, y)_ - tworzy wykres kołowy
+
+_save(figure)_ - zapisuje plik HTML z wykresem

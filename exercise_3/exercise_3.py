@@ -1,4 +1,5 @@
 import numpy as np
+from bokeh.models import Legend
 from scipy import sparse as sp, linalg as la
 import pandas as pd
 from sklearn import neighbors, datasets, preprocessing
@@ -10,6 +11,8 @@ from sklearn.svm import SVC
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import seaborn as sns
+from bokeh.plotting import figure
+from bokeh.io import output_file, show, save
 
 counter = 1
 
@@ -156,8 +159,8 @@ y = np.cos(x)
 z = np.sin(x)
 
 separate()
-figure = plt.figure()
-axes = figure.add_subplot(111)
+plot_figure = plt.figure()
+axes = plot_figure.add_subplot(111)
 axes.plot(x, y)
 
 separate()
@@ -206,3 +209,47 @@ plt.show()
 separate()
 sns.boxplot(x="alive", y="age", hue="adult_male", data=titanic)
 plt.show()
+
+
+# Bokeh
+
+x = [1, 2, 3, 4, 5]
+y = [6, 7, 8, 9, 10]
+
+separate()
+p = figure(title="Time-temperature relation", x_axis_label='Time', y_axis_label='Temperature')
+p.line(x, y, legend_label="Temperature", line_width=4)
+output_file("temperature.html")
+show(p)
+
+plot_1 = figure(plot_width=300, tools='pan,box_zoom')
+plot_2 = figure(plot_width=300, plot_height=300, x_range=(0, 8), y_range=(0, 8))
+plot_3 = figure()
+
+separate()
+plot_1.legend.orientation = "horizontal"
+
+separate()
+plot_1.legend.border_line_color = "red"
+
+separate()
+plot_1.legend.background_fill_color = "yellow"
+
+separate()
+plot_1.circle(np.array([1, 2, 3]), np.array([3, 2, 1]), fill_color='cyan')
+show(plot_1)
+
+separate()
+plot_1.line([1, 2, 3, 4, 1], [5, 6, 7, 8, 9], line_width=4)
+show(plot_1)
+
+separate()
+plot_2.multi_line(
+    pd.DataFrame([[3, 2, 1], [9, 8, 7]]),
+    pd.DataFrame([[1, 2, 3], [7, 8, 9]]),
+    color="cyan"
+)
+show(plot_2)
+
+separate()
+save(plot_1)

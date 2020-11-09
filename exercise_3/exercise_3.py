@@ -1,6 +1,15 @@
 import numpy as np
 from scipy import sparse as sp, linalg as la
 import pandas as pd
+from sklearn import neighbors, datasets, preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LinearRegression
+from sklearn.cluster import KMeans
+from sklearn.svm import SVC
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 counter = 1
 
@@ -115,3 +124,85 @@ print(f"Applied function: {new_frame}")
 
 # Scikit-Learn
 
+# X = np.random.random((10, 5))
+# y = np.array(['M', 'M', 'F', 'F', 'M', 'F', 'M', 'M', 'F', 'F', 'F'])
+# X[X < 0.7] = 0
+# X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+# linear_regression = LinearRegression(normalize=True)
+# k_means = KMeans(n_clusters=3, random_state=0)
+# knn = neighbors.KNeighborsClassifier(n_neighbors=5)
+# svc = SVC(kernel='linear')
+# pca = PCA(n_components=0.95)
+#
+# separate()
+# linear_regression.fit(X, y)
+# knn.fit(X_train, y_train)
+# svc.fit(X_train, y_train)
+#
+# separate()
+# k_means.fit(X_train)
+#
+# separate()
+# pca_model = pca.fit_transform(X_train)
+#
+# separate()
+# knn.score(X_test, y_test)
+
+
+# Matplotlib
+
+x = np.linspace(0, 10, 100)
+y = np.cos(x)
+z = np.sin(x)
+
+separate()
+figure = plt.figure()
+axes = figure.add_subplot(111)
+axes.plot(x, y)
+
+separate()
+axes.scatter([1, 2, 3], [4, 5, 6], marker='*')
+
+separate()
+plt.title('Cosinus')
+
+separate()
+plt.savefig('plot.png')
+
+separate()
+plt.show()
+
+
+# Seaborn
+
+titanic = sns.load_dataset("titanic")
+sns.set_style('ticks')
+
+separate()
+sns.countplot(x="deck", data=titanic)
+plt.show()
+
+separate()
+sns.barplot(x="sex", y="survived", hue="class", data=titanic)
+plt.show()
+
+separate()
+sns.pointplot(
+    x="class",
+    y="survived",
+    hue="sex",
+    data=titanic,
+    palette={ "male": "g",
+              "female": "m"},
+    markers=["^", "o"],
+    linestyles=["-", "--"]
+)
+plt.show()
+
+separate()
+sns.violinplot(x="age", y="sex", hue="survived", data=titanic)
+plt.show()
+
+separate()
+sns.boxplot(x="alive", y="age", hue="adult_male", data=titanic)
+plt.show()

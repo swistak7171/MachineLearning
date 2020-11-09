@@ -31,7 +31,7 @@ _matrix.I_ - zwraca macierz odwrotną
 
 _matrix.T_ - zwraca macierz transponowaną
 
-_linalg.det(matrix) - zwraca wyznacznik macierzy
+_linalg.det(matrix)_ - zwraca wyznacznik macierzy
 
 _linalg.norm(matrix)_ - zwraca normę Frobeniusa macierzy
 
@@ -39,12 +39,39 @@ _linalg.norm(matrix)_ - zwraca normę Frobeniusa macierzy
 
 _DataFrame.sort_values(by)_ - sortuje wartości na podstawie nazwy kolumny
 
-_DataFrame.shape - zwraca wymiary obiektu
+_DataFrame.shape_ - zwraca wymiary obiektu
 
 _DataFrame.sum()_ - sumuje wartości wierszy
 
-_DataFrame.describe() - zwraca opis i własności obiektu
+_DataFrame.describe()_ - zwraca opis i własności obiektu
 
 _DataFrame.apply(lambda)_ - stosuje przekazaną funkcję na wartościach obiektu
 
-## Scikit-Learn
+## Matplotlib
+
+_plt.figure()_ - tworzy nową figurę (wykres)
+
+_figure.add_subplot(rows)_ - dodaje osie do figury (wykresu)
+
+_axes.plot(x, y)_ - zaznacza odpowiednie linie (wartości) na wykresie
+
+_axes.scatter(x, y, marker)_ - zaznacza punkty na układzie współrzędnych
+
+_plt.title(text)_ - nadaje tytuł wykresowi
+
+_plt.savefig(filename)_ - zapisuje wykres do pliku graficznego
+
+_plt.show()_ - wyświetla narysowany wykres w oknie
+
+## Seaborn
+
+
+_sns.countplot(x, data)_ - tworzy wykres słupkowy dla danych
+
+_sns.barplot(x, y, hue, data)_ - tworzy wykres słupkowy dla danych
+
+_sns.pointplot(x, y, hue, data)_ - tworzy wykres punktowy dla danych
+
+_sns.violinplot(x, y, hue, data)_ - tworzy wykres skrzypcowy dla danych
+
+_sns.boxplot(x, y, hue, data)_ - tworzy wykres pudełkowy dla danych

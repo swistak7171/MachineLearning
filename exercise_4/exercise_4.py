@@ -24,6 +24,9 @@ while len(htmls) < 5:
     response = requests.get(url)
     if 'Wyszukiwanie symbolu' not in response.text:
         htmls[code] = response.text
+        print(f"Code {code} found")
+    else:
+        print(f"Code {code} not found")
 
 gielda_sheet = workbook.active
 gielda_sheet.title = 'Giełda'

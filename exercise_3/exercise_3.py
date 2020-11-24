@@ -127,29 +127,29 @@ print(f"Applied function: {new_frame}")
 
 # Scikit-Learn
 
-# X = np.random.random((10, 5))
-# y = np.array(['M', 'M', 'F', 'F', 'M', 'F', 'M', 'M', 'F', 'F', 'F'])
-# X[X < 0.7] = 0
-# X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
-# linear_regression = LinearRegression(normalize=True)
-# k_means = KMeans(n_clusters=3, random_state=0)
-# knn = neighbors.KNeighborsClassifier(n_neighbors=5)
-# svc = SVC(kernel='linear')
-# pca = PCA(n_components=0.95)
-#
-# separate()
-# linear_regression.fit(X, y)
-# knn.fit(X_train, y_train)
-# svc.fit(X_train, y_train)
-#
-# separate()
-# k_means.fit(X_train)
-#
-# separate()
-# pca_model = pca.fit_transform(X_train)
-#
-# separate()
-# knn.score(X_test, y_test)
+X = np.random.random((10, 5))
+y = np.array(['M', 'M', 'F', 'F', 'M', 'F', 'M', 'M', 'F', 'F'])
+X[X < 0.7] = 0
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+linear_regression = LinearRegression(normalize=True)
+k_means = KMeans(n_clusters=3, random_state=0)
+knn = neighbors.KNeighborsClassifier(n_neighbors=5)
+svc = SVC(kernel='linear')
+pca = PCA(n_components=0.95)
+
+separate()
+linear_regression.fit(X, y)
+knn.fit(X_train, y_train)
+svc.fit(X_train, y_train)
+
+separate()
+k_means.fit(X_train)
+
+separate()
+pca_model = pca.fit_transform(X_train)
+
+separate()
+knn.score(X_test, y_test)
 
 
 # Matplotlib

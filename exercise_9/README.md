@@ -30,6 +30,30 @@
 ### Tekst
 ![](corgie_text.jpg)
 
+### Szary
+![](corgie_gray.jpg)
+
+### Krawędzie
+![](corgie_edged.jpg)
+
+### Threshold
+![](corgie_thresh.jpg)
+
+### Kontury
+![](corgie_contours.jpg)
+
+### Kontury z tekstem
+![](corgie_contours_text.jpg)
+
+### Redukcja pikseli
+![](corgie_eroded.jpg)
+
+### Rozszerzony
+![](corgie_dilated.jpg)
+
+### AND
+![](corgie_bitwise.jpg)
+
 ## cv2
 *_imread()_* - wczytuje obraz z pliku.
 
@@ -59,9 +83,31 @@
 
 *_putText(image, text, start, font, scale, color, thickness)_* - rysuje na obrazie podany tekst, gdzie start to punkt początkoowy, font to wybrana przez nas czcionka, scale to skala tekstu, color to kolor tekstu, a thickness to jego grubość.
 
+*_cvtColor(image, mode)_* - zmienia kolorystykę obrazu na podstawie przekazanego trybu (np. na szarość).
+
+*_Canny(image, min, max)_* - znajduje krawędzie obiektów na obrazie używając algorytmu Canny, gdzie min to minimalny próg, a max - maksymalny.
+
+*_threshold(image, thresh, max, type)_* - zmienia wartości pikseli na podstawie podanego progu i maksymalnej wartość używając przekazanego trybu.
+
+*_findContours()_* - wykrywa krawędzie na obrazie (threshold).
+
+*_drawContours()_* - rysuje wykryte kontury na obrazie.
+
+*_erode()_* - redukuje szumy na obrazach i zmniejsza rozmiar obiektów na pierwszym planie.
+
+*_dilate()_* - działa odwrotnie do erode().
+
+*_bitwise_and()_* - używa maski to zmiany wartości pikseli na podstawie działania operacji AND na nich.
+
 ## imutils
 *_resize(image, width, height)_* - zmienia wymiary obrazu, obliczając proporcje i dopasowując odpowiedni wymiar.
 
 *_rotate(image, degree)_* - zwraca obrócony o daną ilość stopni obraz.
 
 *_rotate_bound(image, degree)_* - zwraca obrócony o daną ilość stopni obraz, którego krawędzie nie są przycięte i są w całości widoczne.
+
+*_grab_contours()_* - wykrywa kontury na obrazie.
+
+## ArgumentParser
+*_add_argument(name, fullname, required, help)_* - dodaje argument wejściowy do skryptu, gdzie name to jego skrócona nazwa, fullname to jego pełna nazwa, required określa czy jest wymagany, a help definiuje tekst, który jest wyświetlany w przypadku wpisania komendy --help.
+

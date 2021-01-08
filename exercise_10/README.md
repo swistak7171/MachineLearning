@@ -5,3 +5,6 @@
 
 ### CPU
 ![](cpu_comparison.png)
+
+### DOWNLOAD
+![](download_comparison.png)
